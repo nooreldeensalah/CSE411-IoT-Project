@@ -6,7 +6,7 @@ html {
 
 body {
   margin: 0 auto;
-  max-width: 36em;
+  max-width: 40em;
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 50px;
@@ -110,11 +110,8 @@ li > ul {
 }
 
 table {
-  margin: 1em 0;
+  margin: 1em auto;
   border-collapse: collapse;
-  width: 100%;
-  overflow-x: auto;
-  display: block;
   font-variant-numeric: lining-nums tabular-nums;
 }
 
@@ -149,4 +146,25 @@ details:hover {
   display: block;
   text-align: center;
   margin: 0.5rem auto;
+  background-color: #ededf7;
+  margin: 0;
 }
+
+span.math {
+    margin: 0;
+}
+
+#two-cols {
+  display: flex;
+}
+
+#two-cols img {
+  height: 200px;
+  object-fit: contain;
+}
+
+figcaption {
+  color: #a2a2e9;
+}
+
+m
