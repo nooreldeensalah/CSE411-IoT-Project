@@ -2,9 +2,8 @@ html {
   line-height: 1.5;
   font-family: Georgia, serif;
   font-size: 20px;
-  color: #1a1a1a;
-  background-color: #fdfdfd;
 }
+
 body {
   margin: 0 auto;
   max-width: 36em;
@@ -17,97 +16,99 @@ body {
   text-rendering: optimizeLegibility;
   font-kerning: normal;
 }
+
+@media (min-width: 1068px) {
+  a:before {
+    transform-origin: right;
+    width: calc(100% + 25px);
+  }
+
+  a {
+    position: relative;
+    text-decoration: none;
+    z-index: 2;
+    transition: 0.2s ease-in-out;
+  }
+
+  a:hover:before {
+    transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: left;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200%25' height='100%25'%3E%3Cdefs%3E%3Cstyle%3E .wave%7B animation:wave 1s ease-in-out infinite alternate; animation-delay:-0.25s; stroke:teal; stroke-width:2; stroke-linecap:square; %7D @keyframes wave%7B to%7B d:path('M 0 40 Q 20 42.5 40 40 Q 60 37.5 80 40'); %7D %7D %3C/style%3E%3C/defs%3E%3Cpattern id='wavePattern' x='0' y='0' width='80' height='80' patternUnits='userSpaceOnUse'%3E%3Cpath fill='none' class='wave' d='M 0 40 Q 20 37.5 40 40 Q 60 42.5 80 40' /%3E%3C/pattern%3E%3Crect x='0' y='0' width='100%25' height='100%25' fill='url(%23wavePattern)'%3E%3C/rect%3E%3C/svg%3E")
+      0px 50%/80px 80px repeat-x;
+    -webkit-animation: waving 3s linear infinite;
+    animation: waving 3s linear infinite;
+    transform: scaleX(1);
+  }
+
+  a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    left: 0;
+    bottom: -42px;
+    z-index: -1;
+    transform: scaleX(0);
+    transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1);
+    transform-origin: right;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200%25' height='100%25'%3E%3Cdefs%3E%3Cstyle%3E .wave%7B stroke:teal; stroke-width:2; stroke-linecap:square; %7D %3C/style%3E%3C/defs%3E%3Cpattern id='wavePattern' x='0' y='0' width='80' height='80' patternUnits='userSpaceOnUse'%3E%3Cpath fill='none' class='wave' d='M 0 40 Q 20 40 40 40 Q 60 40 80 40' /%3E%3C/pattern%3E%3Crect x='0' y='0' width='100%25' height='100%25' fill='url(%23wavePattern)'%3E%3C/rect%3E%3C/svg%3E")
+      0px 50%/80px 80px repeat-x;
+  }
+
+  @-webkit-keyframes waving {
+    to {
+      background-position: 80px 50%, 160px 50%;
+    }
+  }
+
+  @keyframes waving {
+    to {
+      background-position: 80px 50%, 160px 50%;
+    }
+  }
+}
+
 @media (max-width: 600px) {
   body {
     font-size: 0.9em;
     padding: 1em;
   }
 }
-@media print {
-  body {
-    background-color: transparent;
-    color: black;
-    font-size: 12pt;
-  }
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-  h2,
-  h3,
-  h4 {
-    page-break-after: avoid;
-  }
-}
+
 p {
   margin: 1em 0;
 }
+
 a {
-  color: #1a1a1a;
+  text-decoration: none;
+  color: rgb(1, 146, 183);
 }
-a:visited {
-  color: #1a1a1a;
-}
+
 img {
   max-width: 100%;
+}
+
+h1 {
+  color: #67b821;
 }
 h1,
 h2,
 h3,
-h4,
-h5,
-h6 {
+h4 {
   margin-top: 1.4em;
 }
-h5,
-h6 {
-  font-size: 1em;
-  font-style: italic;
-}
-h6 {
-  font-weight: normal;
-}
+
 ol,
 ul {
   padding-left: 1.7em;
   margin-top: 1em;
 }
+
 li > ol,
 li > ul {
   margin-top: 0;
 }
-blockquote {
-  margin: 1em 0 1em 1.7em;
-  padding-left: 1em;
-  border-left: 2px solid #e6e6e6;
-  color: #606060;
-}
-code {
-  font-family: Menlo, Monaco, "Lucida Console", Consolas, monospace;
-  font-size: 85%;
-  margin: 0;
-}
-pre {
-  margin: 1em 0;
-  overflow: auto;
-}
-pre code {
-  padding: 0;
-  overflow: visible;
-  overflow-wrap: normal;
-}
-.sourceCode {
-  background-color: transparent;
-  overflow: visible;
-}
-hr {
-  background-color: #1a1a1a;
-  border: none;
-  height: 1px;
-  margin: 1em 0;
-}
+
 table {
   margin: 1em 0;
   border-collapse: collapse;
@@ -116,52 +117,34 @@ table {
   display: block;
   font-variant-numeric: lining-nums tabular-nums;
 }
+
 table caption {
   margin-bottom: 0.75em;
 }
+
 tbody {
   margin-top: 0.5em;
   border-top: 1px solid #1a1a1a;
   border-bottom: 1px solid #1a1a1a;
 }
+
 th {
   border-top: 1px solid #1a1a1a;
   padding: 0.25em 0.5em 0.25em 0.5em;
 }
+
 td {
   padding: 0.125em 0.5em 0.25em 0.5em;
 }
-header {
-  margin-bottom: 4em;
-  text-align: center;
+
+details:hover {
+  cursor: pointer;
 }
+
 #TOC li {
   list-style: none;
 }
-#TOC a:not(:hover) {
-  text-decoration: none;
-}
-code {
-  white-space: pre-wrap;
-}
-span.smallcaps {
-  font-variant: small-caps;
-}
-span.underline {
-  text-decoration: underline;
-}
-div.column {
-  display: inline-block;
-  vertical-align: top;
-  width: 50%;
-}
-div.hanging-indent {
-  margin-left: 1.5em;
-  text-indent: -1.5em;
-}
-ul.task-list {
-  list-style: none;
-}
+
 .display.math {
   display: block;
   text-align: center;
