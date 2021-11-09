@@ -1,7 +1,5 @@
 # Attendance System
 
-- Table of Contents
-
 # Introduction and Objectives
 
 Taking attendance by hand is so 2000ish; it's prone to human error and time-consuming —especially in classes where there are many students— the same problems of taking attendance manually are applicable when compiling this data into digital format.
@@ -23,9 +21,9 @@ This solution uses a biometric fingerprint sensor to record the student's attend
 ### Cons
 
 1. While enrolling the fingerprints, fingers must not be swollen and should not have scratches. Also, they should be neither damp nor dry. Students’ fingerprints must be properly clean. Orientation of fingers on FPS is also necessary. [[1]]()
-    
-    ![Untitled](Attendance%20System%201c0440293e1249cd8119b9df2eda690c/Untitled.png)
-    
+
+   ![Fingerprints issues](images/fingerprints.png)
+
 2. Might be a cause of spreading infections and diseases.
 3. Data breaches of fingerprints.
 
@@ -33,9 +31,10 @@ This solution uses a biometric fingerprint sensor to record the student's attend
 
 [Required Equipment](https://www.notion.so/82e00ff687ea489492f1addb4d5d54f2)
 
-$$CostPerClass = 500 + 250 = 750 \\ CostPerStudent = NumberOfStudents \times 0 = 0$$
+$$CostPerClass = 500 + 250 = 750$$
+$$CostPerStudent = NumberOfStudents \times 0 = 0$$
 
-![Untitled](Attendance%20System%201c0440293e1249cd8119b9df2eda690c/Untitled%201.png)
+![Cost per class using fingerprints](images/cost_1.png)
 
 ## Computer Vision
 
@@ -55,9 +54,10 @@ This solution uses computer vision techniques, such as facial recognition, to re
 
 [Required Equipment](https://www.notion.so/7dc7307caac44e4aadc535cf362efb2d)
 
-$$CostPerClass = 300 + 1400 = 1700 \\ CostPerStudent = NumberOfStudents \times 0 = 0$$
+$$CostPerClass = 300 + 1400 = 1700$$
+$$CostPerStudent = NumberOfStudents \times 0 = 0$$
 
-![Untitled](Attendance%20System%201c0440293e1249cd8119b9df2eda690c/Untitled%202.png)
+![Cost per class using computer vision](images/cost_2.png)
 
 ## RFID (Radio Frequency Identification)
 
@@ -76,11 +76,12 @@ This solution uses RFID cards which are unique for each student, where the stude
 
 [Required Equipment](https://www.notion.so/8e586a174dcc470095057ac621d9815f)
 
-$$CostPerClass = 115 + 250 = 365 \\ CostPerStudent = NumberOfStudents \times 10$$
+$$CostPerClass = 115 + 250 = 365$$
+$$CostPerStudent = NumberOfStudents \times 10$$
 
-![Untitled](Attendance%20System%201c0440293e1249cd8119b9df2eda690c/Untitled%203.png)
+![Cost per class using RFID](images/cost_3_a.png)
 
-![Untitled](Attendance%20System%201c0440293e1249cd8119b9df2eda690c/Untitled%204.png)
+![Cost per student using RFID](images/cost_3_b.png)
 
 ## Barcode
 
@@ -99,19 +100,20 @@ This solution uses a camera module that scans a barcode on the student's ID to r
 
 [Required Equipment](https://www.notion.so/27f2d088e21c4895838c7d751a278e4f)
 
-$$CostPerClass = 175 + 250= 425 \\ CostPerStudent = NumberOfStudents \times 0 = 0$$
+$$CostPerClass = 175 + 250= 425$$
+$$CostPerStudent = NumberOfStudents \times 0 = 0$$
 
-![Untitled](Attendance%20System%201c0440293e1249cd8119b9df2eda690c/Untitled%205.png)
+![Untitled](images/Untitled%205.png)
 
 # Main Components
 
 We will be using the last approach (Attendance system using barcode on student's ID), the following diagram illustrates the workflow of the IoT system:
 
-![Untitled Diagram.drawio.svg](Attendance%20System%201c0440293e1249cd8119b9df2eda690c/Untitled_Diagram.drawio.svg)
+![Project architecture](images/architecture.svg)
 
 1. Set up a webhook on Google's `[Apps Script](https://developers.google.com/apps-script)`,
 2. The ESP will call the App Script webhook whenever a student card is scanned,
-    1. The student's barcode is scanned using the camera module.
+   1. The student's barcode is scanned using the camera module.
 3. The App Script will update the Google Sheet.
 4. The student's attendance is recorded into a sheet which serves the purpose of a simple database.
 5. Build a few custom widgets for Google Sheets that can be used for analytics, e.g., a heatmap of students attendance.
@@ -120,4 +122,4 @@ We will be using the last approach (Attendance system using barcode on student's
 
 # References
 
-[1] *IoT Based Biometric Attendance System, International Journal of Electrical Engineering & Technology, 11(2), 2020, pp. 156-161.*
+[1] _IoT Based Biometric Attendance System, International Journal of Electrical Engineering & Technology, 11(2), 2020, pp. 156-161._
