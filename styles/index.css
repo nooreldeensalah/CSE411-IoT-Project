@@ -1,10 +1,13 @@
 html {
   line-height: 1.5;
-  font-family: Georgia, serif;
   font-size: 20px;
 }
 
 body {
+  margin: 0 auto;
+  padding: 0;
+}
+body main {
   margin: 0 auto;
   max-width: 40em;
   padding-left: 50px;
@@ -17,20 +20,54 @@ body {
   font-kerning: normal;
 }
 
+header nav {
+  background-color: #24252a;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* padding: 1rem 1rem 1rem 3rem; */
+  /* max-height: 80px; */
+}
+
+header li,
+header a {
+  font-weight: 500;
+  font-size: 22px;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+header ul {
+  list-style: none;
+}
+
+header ul li {
+  display: inline-block;
+  padding: 0 20px;
+}
+
+header ul li a {
+  transition: all 0.3s ease 0s;
+}
+
+header ul li a:hover {
+  color: rgb(0, 136, 169);
+}
+
 @media (min-width: 1068px) {
-  a:before {
+  article a:before {
     transform-origin: right;
     width: calc(100% + 25px);
   }
 
-  a {
+  article a {
     position: relative;
     text-decoration: none;
     z-index: 2;
     transition: 0.2s ease-in-out;
   }
 
-  a:hover:before {
+  article a:hover:before {
     transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transform-origin: left;
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200%25' height='100%25'%3E%3Cdefs%3E%3Cstyle%3E .wave%7B animation:wave 1s ease-in-out infinite alternate; animation-delay:-0.25s; stroke:teal; stroke-width:2; stroke-linecap:square; %7D @keyframes wave%7B to%7B d:path('M 0 40 Q 20 42.5 40 40 Q 60 37.5 80 40'); %7D %7D %3C/style%3E%3C/defs%3E%3Cpattern id='wavePattern' x='0' y='0' width='80' height='80' patternUnits='userSpaceOnUse'%3E%3Cpath fill='none' class='wave' d='M 0 40 Q 20 37.5 40 40 Q 60 42.5 80 40' /%3E%3C/pattern%3E%3Crect x='0' y='0' width='100%25' height='100%25' fill='url(%23wavePattern)'%3E%3C/rect%3E%3C/svg%3E")
@@ -40,7 +77,7 @@ body {
     transform: scaleX(1);
   }
 
-  a:before {
+  article a:before {
     content: "";
     position: absolute;
     width: 100%;
@@ -71,7 +108,6 @@ body {
 @media (max-width: 600px) {
   body {
     font-size: 0.9em;
-    padding: 1em;
   }
 }
 
@@ -151,7 +187,7 @@ details:hover {
 }
 
 span.math {
-    margin: 0;
+  margin: 0;
 }
 
 #two-cols {
@@ -166,5 +202,3 @@ span.math {
 figcaption {
   color: #a2a2e9;
 }
-
-m

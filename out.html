@@ -10,421 +10,450 @@
     <link rel="stylesheet" href="/styles/index.css" />
   </head>
   <body>
-    <h1>Attendance System</h1>
-    <details>
-      <summary>Table of contents</summary>
-      <nav id="TOC" role="doc-toc">
+    <header>
+      <nav>
         <ul>
-          <li>
-            <a href="#introduction-and-objectives"
-              >Introduction and Objectives</a
-            >
-          </li>
-          <li>
-            <a href="#different-approaches">Different Approaches</a>
-            <ul>
-              <li>
-                <a href="#biometric-fingerprint">Biometric Fingerprint</a>
-              </li>
-              <li><a href="#computer-vision">Computer Vision</a></li>
-              <li>
-                <a href="#rfid-radio-frequency-identification"
-                  >RFID (Radio Frequency Identification)</a
-                >
-              </li>
-              <li><a href="#barcode">Barcode</a></li>
-            </ul>
-          </li>
-          <li><a href="#main-components">Main Components</a></li>
-          <li><a href="#references">References</a></li>
+          <li><a rel="prefetch" href="/">Proposal</a></li>
+          <li><a rel="prefetch" href="/about/">About</a></li>
+          <li><a rel="prefetch" href="/contact">Contact us</a></li>
         </ul>
       </nav>
-    </details>
+    </header>
+    <main>
+      <article>
+        <h1>Attendance System</h1>
+        <details>
+          <summary>Table of contents</summary>
+          <nav id="TOC" role="doc-toc">
+            <ul>
+              <li>
+                <a href="#introduction-and-objectives"
+                  >Introduction and Objectives</a
+                >
+              </li>
+              <li>
+                <a href="#different-approaches">Different Approaches</a>
+                <ul>
+                  <li>
+                    <a href="#biometric-fingerprint">Biometric Fingerprint</a>
+                  </li>
+                  <li><a href="#computer-vision">Computer Vision</a></li>
+                  <li>
+                    <a href="#rfid-radio-frequency-identification"
+                      >RFID (Radio Frequency Identification)</a
+                    >
+                  </li>
+                  <li><a href="#barcode">Barcode</a></li>
+                </ul>
+              </li>
+              <li><a href="#main-components">Main Components</a></li>
+              <li><a href="#references">References</a></li>
+            </ul>
+          </nav>
+        </details>
 
-    <section id="introduction-and-objectives" class="level2">
-      <h2>Introduction and Objectives</h2>
-      <p>
-        Taking attendance by hand is so 2000ish; it’s prone to human error and
-        time-consuming —especially in classes where there are many students— the
-        same problems of taking attendance manually are applicable when
-        compiling this data into digital format.
-      </p>
-      <p>
-        We propose an IoT-based solution to automate taking attendance: students
-        are responsible for registering their attendance, and integration with
-        the technology used by the instructors, e.g., Google Sheets, is
-        automated.
-      </p>
-    </section>
-    <section id="different-approaches" class="level2">
-      <h2>Different Approaches</h2>
-      <p>There are multiple different approaches to register attendance:</p>
-      <section id="biometric-fingerprint" class="level3">
-        <h3>Biometric Fingerprint</h3>
-        <p>
-          This solution uses a biometric fingerprint sensor to record the
-          student’s attendance.
-        </p>
-        <section id="pros" class="level4">
-          <h4>Pros</h4>
-          <ol type="1">
-            <li>No special card is needed.</li>
-          </ol>
+        <section id="introduction-and-objectives" class="level2">
+          <h2>Introduction and Objectives</h2>
+          <p>
+            Taking attendance by hand is so 2000ish; it’s prone to human error
+            and time-consuming —especially in classes where there are many
+            students— the same problems of taking attendance manually are
+            applicable when compiling this data into digital format.
+          </p>
+          <p>
+            We propose an IoT-based solution to automate taking attendance:
+            students are responsible for registering their attendance, and
+            integration with the technology used by the instructors, e.g.,
+            Google Sheets, is automated.
+          </p>
         </section>
-        <section id="cons" class="level4">
-          <h4>Cons</h4>
-          <ol type="1">
-            <li>
+        <section id="different-approaches" class="level2">
+          <h2>Different Approaches</h2>
+          <p>There are multiple different approaches to register attendance:</p>
+          <section id="biometric-fingerprint" class="level3">
+            <h3>Biometric Fingerprint</h3>
+            <p>
+              This solution uses a biometric fingerprint sensor to record the
+              student’s attendance.
+            </p>
+            <section id="pros" class="level4">
+              <h4>Pros</h4>
+              <ol type="1">
+                <li>No special card is needed.</li>
+              </ol>
+            </section>
+            <section id="cons" class="level4">
+              <h4>Cons</h4>
+              <ol type="1">
+                <li>
+                  <p>
+                    While enrolling the fingerprints, fingers must not be
+                    swollen and should not have scratches. Also, they should be
+                    neither damp nor dry. Students’ fingerprints must be
+                    properly clean. Orientation of fingers on FPS is also
+                    necessary.
+                    <a href="#1">[1]</a>
+                  </p>
+                  <figure>
+                    <img
+                      src="images/fingerprints.png"
+                      alt="Fingerprints issues"
+                      loading="lazy"
+                    />
+                    <figcaption aria-hidden="true">
+                      Fingerprints issues
+                    </figcaption>
+                  </figure>
+                </li>
+                <li>
+                  <p>Might be a cause of spreading infections and diseases.</p>
+                </li>
+                <li><p>Data breaches of fingerprints.</p></li>
+              </ol>
+            </section>
+            <section id="economic-scalability" class="level4">
+              <h4>Economic Scalability</h4>
+              <p>Required Equipment</p>
+              <table>
+                <thead>
+                  <tr class="header">
+                    <th>Name</th>
+                    <th>Price (EGP)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="odd">
+                    <td>Fingerprint sensor</td>
+                    <td>500</td>
+                  </tr>
+                  <tr class="even">
+                    <td>ESP-32S Development Board</td>
+                    <td>250</td>
+                  </tr>
+                </tbody>
+              </table>
               <p>
-                While enrolling the fingerprints, fingers must not be swollen
-                and should not have scratches. Also, they should be neither damp
-                nor dry. Students’ fingerprints must be properly clean.
-                Orientation of fingers on FPS is also necessary.
-                <a href="">[1]</a>
+                <span class="math display"
+                  ><em>C</em><em>o</em><em>s</em><em>t</em><em>P</em><em>e</em
+                  ><em>r</em><em>C</em><em>l</em><em>a</em><em>s</em
+                  ><em>s</em> = 500 + 250 = 750</span
+                >
+                <span class="math display"
+                  ><em>C</em><em>o</em><em>s</em><em>t</em><em>P</em><em>e</em
+                  ><em>r</em><em>S</em><em>t</em><em>u</em><em>d</em><em>e</em
+                  ><em>n</em><em>t</em> = <em>N</em><em>u</em><em>m</em
+                  ><em>b</em><em>e</em><em>r</em><em>O</em><em>f</em><em>S</em
+                  ><em>t</em><em>u</em><em>d</em><em>e</em><em>n</em><em>t</em
+                  ><em>s</em> × 0 = 0</span
+                >
               </p>
               <figure>
                 <img
-                  src="images/fingerprints.png"
-                  alt="Fingerprints issues"
+                  src="images/cost_1.png"
+                  alt="Cost per class using fingerprints"
                   loading="lazy"
                 />
-                <figcaption aria-hidden="true">Fingerprints issues</figcaption>
+                <figcaption aria-hidden="true">
+                  Cost per class using fingerprints
+                </figcaption>
               </figure>
-            </li>
-            <li>
-              <p>Might be a cause of spreading infections and diseases.</p>
-            </li>
-            <li><p>Data breaches of fingerprints.</p></li>
-          </ol>
+            </section>
+          </section>
+          <section id="computer-vision" class="level3">
+            <h3>Computer Vision</h3>
+            <p>
+              This solution uses computer vision techniques, such as facial
+              recognition, to record the student’s attendance.
+            </p>
+            <section id="pros-1" class="level4">
+              <h4>Pros</h4>
+              <ol type="1">
+                <li>No special card is needed.</li>
+              </ol>
+            </section>
+            <section id="cons-1" class="level4">
+              <h4>Cons</h4>
+              <ol type="1">
+                <li>
+                  Personal Privacy; some people might object to taking photos of
+                  them.
+                </li>
+                <li>
+                  Needs a powerful micro-controller to make the system
+                  receptive.
+                </li>
+                <li>
+                  Its accuracy might be decreased due to changes in people’s
+                  looks; shaving a beard or pulling an all-nighter, especially
+                  the training will be mostly one-shot learning.
+                </li>
+              </ol>
+            </section>
+            <section id="economic-scalability-1" class="level4">
+              <h4>Economic Scalability</h4>
+              <p>Required Equipment</p>
+              <table>
+                <thead>
+                  <tr class="header">
+                    <th>Name</th>
+                    <th>Price (EGP)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="odd">
+                    <td>Camera</td>
+                    <td>300</td>
+                  </tr>
+                  <tr class="even">
+                    <td>Raspberry Pi 3</td>
+                    <td>1400</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>
+                <span class="math display"
+                  ><em>C</em><em>o</em><em>s</em><em>t</em><em>P</em><em>e</em
+                  ><em>r</em><em>C</em><em>l</em><em>a</em><em>s</em
+                  ><em>s</em> = 300 + 1400 = 1700</span
+                >
+                <span class="math display"
+                  ><em>C</em><em>o</em><em>s</em><em>t</em><em>P</em><em>e</em
+                  ><em>r</em><em>S</em><em>t</em><em>u</em><em>d</em><em>e</em
+                  ><em>n</em><em>t</em> = <em>N</em><em>u</em><em>m</em
+                  ><em>b</em><em>e</em><em>r</em><em>O</em><em>f</em><em>S</em
+                  ><em>t</em><em>u</em><em>d</em><em>e</em><em>n</em><em>t</em
+                  ><em>s</em> × 0 = 0</span
+                >
+              </p>
+              <figure>
+                <img
+                  src="images/cost_2.png"
+                  alt="Cost per class using computer vision"
+                  loading="lazy"
+                />
+                <figcaption aria-hidden="true">
+                  Cost per class using computer vision
+                </figcaption>
+              </figure>
+            </section>
+          </section>
+          <section id="rfid-radio-frequency-identification" class="level3">
+            <h3>RFID (Radio Frequency Identification)</h3>
+            <p>
+              This solution uses RFID cards which are unique for each student,
+              where the student’s attendance is record by reading the student’s
+              card.
+            </p>
+            <section id="pros-2" class="level4">
+              <h4>Pros</h4>
+              <ol type="1">
+                <li>
+                  Contactless; doesn’t contribute to spreading infections.
+                </li>
+                <li>
+                  Accuracy doesn’t deteriorate due to human-related factors, as
+                  in the fingerprint and camera-based solutions.
+                </li>
+              </ol>
+            </section>
+            <section id="cons-2" class="level4">
+              <h4>Cons</h4>
+              <ol type="1">
+                <li>A special card is needed.</li>
+              </ol>
+            </section>
+            <section id="economic-scalability-2" class="level4">
+              <h4>Economic Scalability</h4>
+              <p>Required Equipment</p>
+              <table>
+                <thead>
+                  <tr class="header">
+                    <th>Name</th>
+                    <th>Price (EGP)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="odd">
+                    <td>RFID Card Reader</td>
+                    <td>115</td>
+                  </tr>
+                  <tr class="even">
+                    <td>ESP-32S Development Board</td>
+                    <td>250</td>
+                  </tr>
+                  <tr class="odd">
+                    <td>RFID Card (per student)</td>
+                    <td>10</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>
+                <span class="math display"
+                  ><em>C</em><em>o</em><em>s</em><em>t</em><em>P</em><em>e</em
+                  ><em>r</em><em>C</em><em>l</em><em>a</em><em>s</em
+                  ><em>s</em> = 115 + 250 = 365</span
+                >
+                <span class="math display"
+                  ><em>C</em><em>o</em><em>s</em><em>t</em><em>P</em><em>e</em
+                  ><em>r</em><em>S</em><em>t</em><em>u</em><em>d</em><em>e</em
+                  ><em>n</em><em>t</em> = <em>N</em><em>u</em><em>m</em
+                  ><em>b</em><em>e</em><em>r</em><em>O</em><em>f</em><em>S</em
+                  ><em>t</em><em>u</em><em>d</em><em>e</em><em>n</em><em>t</em
+                  ><em>s</em> × 10</span
+                >
+              </p>
+              <div id="two-cols">
+                <figure>
+                  <img
+                    src="images/cost_3_a.png"
+                    alt="Cost per class using RFID"
+                    loading="lazy"
+                  />
+                  <figcaption aria-hidden="true">
+                    Cost per class using RFID
+                  </figcaption>
+                </figure>
+                <figure>
+                  <img
+                    src="images/cost_3_b.png"
+                    alt="Cost per student using RFID"
+                    loading="lazy"
+                  />
+                  <figcaption aria-hidden="true">
+                    Cost per student using RFID
+                  </figcaption>
+                </figure>
+              </div>
+            </section>
+          </section>
+          <section id="barcode" class="level3">
+            <h3>Barcode</h3>
+            <p>
+              This solution uses a camera module that scans a barcode on the
+              student’s ID to record the student’s attendance.
+            </p>
+            <section id="pros-3" class="level4">
+              <h4>Pros</h4>
+              <ol type="1">
+                <li>Same pros of RFID.</li>
+                <li>No special card is needed.</li>
+              </ol>
+            </section>
+            <section id="cons-3" class="level4">
+              <h4>Cons</h4>
+              <ol type="1">
+                <li>Dedicated barcode scanners are expensive.</li>
+              </ol>
+            </section>
+            <section id="economic-scalability-3" class="level4">
+              <h4>Economic Scalability</h4>
+              <p>Required Equipment</p>
+              <table>
+                <thead>
+                  <tr class="header">
+                    <th>Name</th>
+                    <th>Price (EGP)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="odd">
+                    <td>OV7670 Camera Module</td>
+                    <td>175</td>
+                  </tr>
+                  <tr class="even">
+                    <td>ESP-32S Development Board</td>
+                    <td>250</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>
+                <span class="math display"
+                  ><em>C</em><em>o</em><em>s</em><em>t</em><em>P</em><em>e</em
+                  ><em>r</em><em>C</em><em>l</em><em>a</em><em>s</em
+                  ><em>s</em> = 175 + 250 = 425</span
+                >
+                <span class="math display"
+                  ><em>C</em><em>o</em><em>s</em><em>t</em><em>P</em><em>e</em
+                  ><em>r</em><em>S</em><em>t</em><em>u</em><em>d</em><em>e</em
+                  ><em>n</em><em>t</em> = <em>N</em><em>u</em><em>m</em
+                  ><em>b</em><em>e</em><em>r</em><em>O</em><em>f</em><em>S</em
+                  ><em>t</em><em>u</em><em>d</em><em>e</em><em>n</em><em>t</em
+                  ><em>s</em> × 0 = 0</span
+                >
+              </p>
+              <figure>
+                <img
+                  src="images/cost_4.png"
+                  alt="Cost per class"
+                  loading="lazy"
+                />
+                <figcaption aria-hidden="true">Cost per class</figcaption>
+              </figure>
+            </section>
+          </section>
         </section>
-        <section id="economic-scalability" class="level4">
-          <h4>Economic Scalability</h4>
-          <p>Required Equipment</p>
-          <table>
-            <thead>
-              <tr class="header">
-                <th>Name</th>
-                <th>Price (EGP)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="odd">
-                <td>Fingerprint sensor</td>
-                <td>500</td>
-              </tr>
-              <tr class="even">
-                <td>ESP-32S Development Board</td>
-                <td>250</td>
-              </tr>
-            </tbody>
-          </table>
+        <section id="main-components" class="level2">
+          <h2>Main Components</h2>
           <p>
-            <span class="math display"
-              ><em>C</em><em>o</em><em>s</em><em>t</em><em>P</em><em>e</em
-              ><em>r</em><em>C</em><em>l</em><em>a</em><em>s</em
-              ><em>s</em> = 500 + 250 = 750</span
-            >
-            <span class="math display"
-              ><em>C</em><em>o</em><em>s</em><em>t</em><em>P</em><em>e</em
-              ><em>r</em><em>S</em><em>t</em><em>u</em><em>d</em><em>e</em
-              ><em>n</em><em>t</em> = <em>N</em><em>u</em><em>m</em><em>b</em
-              ><em>e</em><em>r</em><em>O</em><em>f</em><em>S</em><em>t</em
-              ><em>u</em><em>d</em><em>e</em><em>n</em><em>t</em
-              ><em>s</em> × 0 = 0</span
-            >
+            We will be using the last approach (Attendance system using barcode
+            on student’s ID), the following diagram illustrates the workflow of
+            the IoT system:
           </p>
           <figure>
             <img
-              src="images/cost_1.png"
-              alt="Cost per class using fingerprints"
+              src="images/architecture.svg"
+              alt="Project architecture"
               loading="lazy"
             />
-            <figcaption aria-hidden="true">
-              Cost per class using fingerprints
-            </figcaption>
+            <figcaption aria-hidden="true">Project architecture</figcaption>
           </figure>
-        </section>
-      </section>
-      <section id="computer-vision" class="level3">
-        <h3>Computer Vision</h3>
-        <p>
-          This solution uses computer vision techniques, such as facial
-          recognition, to record the student’s attendance.
-        </p>
-        <section id="pros-1" class="level4">
-          <h4>Pros</h4>
-          <ol type="1">
-            <li>No special card is needed.</li>
-          </ol>
-        </section>
-        <section id="cons-1" class="level4">
-          <h4>Cons</h4>
           <ol type="1">
             <li>
-              Personal Privacy; some people might object to taking photos of
-              them.
+              Set up a webhook on Google’s
+              <a href="https://developers.google.com/apps-script">Apps Script</a
+              >,
             </li>
             <li>
-              Needs a powerful micro-controller to make the system receptive.
+              The ESP will call the App Script webhook whenever a student card
+              is scanned,
+              <ol type="1">
+                <li>
+                  The student’s barcode is scanned using the camera module.
+                </li>
+              </ol>
+            </li>
+            <li>The App Script will update the Google Sheet.</li>
+            <li>
+              The student’s attendance is recorded into a sheet which serves the
+              purpose of a simple database.
             </li>
             <li>
-              Its accuracy might be decreased due to changes in people’s looks;
-              shaving a beard or pulling an all-nighter, especially the training
-              will be mostly one-shot learning.
+              Build a few custom widgets for Google Sheets that can be used for
+              analytics, e.g., a heatmap of students attendance.
+            </li>
+            <li>
+              (optional) Set up a notification system that alerts the student’s
+              parents whenever a student is absent for more than 3 successive
+              days.
+            </li>
+            <li>
+              (optional) Make a dashboard that connects the ESP to a specific
+              sheet, i.e., a different sheet for each class.
             </li>
           </ol>
         </section>
-        <section id="economic-scalability-1" class="level4">
-          <h4>Economic Scalability</h4>
-          <p>Required Equipment</p>
-          <table>
-            <thead>
-              <tr class="header">
-                <th>Name</th>
-                <th>Price (EGP)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="odd">
-                <td>Camera</td>
-                <td>300</td>
-              </tr>
-              <tr class="even">
-                <td>Raspberry Pi 3</td>
-                <td>1400</td>
-              </tr>
-            </tbody>
-          </table>
-          <p>
-            <span class="math display"
-              ><em>C</em><em>o</em><em>s</em><em>t</em><em>P</em><em>e</em
-              ><em>r</em><em>C</em><em>l</em><em>a</em><em>s</em
-              ><em>s</em> = 300 + 1400 = 1700</span
-            >
-            <span class="math display"
-              ><em>C</em><em>o</em><em>s</em><em>t</em><em>P</em><em>e</em
-              ><em>r</em><em>S</em><em>t</em><em>u</em><em>d</em><em>e</em
-              ><em>n</em><em>t</em> = <em>N</em><em>u</em><em>m</em><em>b</em
-              ><em>e</em><em>r</em><em>O</em><em>f</em><em>S</em><em>t</em
-              ><em>u</em><em>d</em><em>e</em><em>n</em><em>t</em
-              ><em>s</em> × 0 = 0</span
+        <section id="references" class="level2">
+          <h2>References</h2>
+          <p id="1">
+            [1]
+            <em
+              >IoT Based Biometric Attendance System, International Journal of
+              Electrical Engineering &amp; Technology, 11(2), 2020,
+              pp. 156-161.</em
             >
           </p>
-          <figure>
-            <img
-              src="images/cost_2.png"
-              alt="Cost per class using computer vision"
-              loading="lazy"
-            />
-            <figcaption aria-hidden="true">
-              Cost per class using computer vision
-            </figcaption>
-          </figure>
         </section>
-      </section>
-      <section id="rfid-radio-frequency-identification" class="level3">
-        <h3>RFID (Radio Frequency Identification)</h3>
-        <p>
-          This solution uses RFID cards which are unique for each student, where
-          the student’s attendance is record by reading the student’s card.
-        </p>
-        <section id="pros-2" class="level4">
-          <h4>Pros</h4>
-          <ol type="1">
-            <li>Contactless; doesn’t contribute to spreading infections.</li>
-            <li>
-              Accuracy doesn’t deteriorate due to human-related factors, as in
-              the fingerprint and camera-based solutions.
-            </li>
-          </ol>
-        </section>
-        <section id="cons-2" class="level4">
-          <h4>Cons</h4>
-          <ol type="1">
-            <li>A special card is needed.</li>
-          </ol>
-        </section>
-        <section id="economic-scalability-2" class="level4">
-          <h4>Economic Scalability</h4>
-          <p>Required Equipment</p>
-          <table>
-            <thead>
-              <tr class="header">
-                <th>Name</th>
-                <th>Price (EGP)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="odd">
-                <td>RFID Card Reader</td>
-                <td>115</td>
-              </tr>
-              <tr class="even">
-                <td>ESP-32S Development Board</td>
-                <td>250</td>
-              </tr>
-              <tr class="odd">
-                <td>RFID Card (per student)</td>
-                <td>10</td>
-              </tr>
-            </tbody>
-          </table>
-          <p>
-            <span class="math display"
-              ><em>C</em><em>o</em><em>s</em><em>t</em><em>P</em><em>e</em
-              ><em>r</em><em>C</em><em>l</em><em>a</em><em>s</em
-              ><em>s</em> = 115 + 250 = 365</span
-            >
-            <span class="math display"
-              ><em>C</em><em>o</em><em>s</em><em>t</em><em>P</em><em>e</em
-              ><em>r</em><em>S</em><em>t</em><em>u</em><em>d</em><em>e</em
-              ><em>n</em><em>t</em> = <em>N</em><em>u</em><em>m</em><em>b</em
-              ><em>e</em><em>r</em><em>O</em><em>f</em><em>S</em><em>t</em
-              ><em>u</em><em>d</em><em>e</em><em>n</em><em>t</em
-              ><em>s</em> × 10</span
-            >
-          </p>
-          <div id="two-cols">
-            <figure>
-              <img
-                src="images/cost_3_a.png"
-                alt="Cost per class using RFID"
-                loading="lazy"
-              />
-              <figcaption aria-hidden="true">
-                Cost per class using RFID
-              </figcaption>
-            </figure>
-            <figure>
-              <img
-                src="images/cost_3_b.png"
-                alt="Cost per student using RFID"
-                loading="lazy"
-              />
-              <figcaption aria-hidden="true">
-                Cost per student using RFID
-              </figcaption>
-            </figure>
-          </div>
-        </section>
-      </section>
-      <section id="barcode" class="level3">
-        <h3>Barcode</h3>
-        <p>
-          This solution uses a camera module that scans a barcode on the
-          student’s ID to record the student’s attendance.
-        </p>
-        <section id="pros-3" class="level4">
-          <h4>Pros</h4>
-          <ol type="1">
-            <li>Same pros of RFID.</li>
-            <li>No special card is needed.</li>
-          </ol>
-        </section>
-        <section id="cons-3" class="level4">
-          <h4>Cons</h4>
-          <ol type="1">
-            <li>Dedicated barcode scanners are expensive.</li>
-          </ol>
-        </section>
-        <section id="economic-scalability-3" class="level4">
-          <h4>Economic Scalability</h4>
-          <p>Required Equipment</p>
-          <table>
-            <thead>
-              <tr class="header">
-                <th>Name</th>
-                <th>Price (EGP)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="odd">
-                <td>OV7670 Camera Module</td>
-                <td>175</td>
-              </tr>
-              <tr class="even">
-                <td>ESP-32S Development Board</td>
-                <td>250</td>
-              </tr>
-            </tbody>
-          </table>
-          <p>
-            <span class="math display"
-              ><em>C</em><em>o</em><em>s</em><em>t</em><em>P</em><em>e</em
-              ><em>r</em><em>C</em><em>l</em><em>a</em><em>s</em
-              ><em>s</em> = 175 + 250 = 425</span
-            >
-            <span class="math display"
-              ><em>C</em><em>o</em><em>s</em><em>t</em><em>P</em><em>e</em
-              ><em>r</em><em>S</em><em>t</em><em>u</em><em>d</em><em>e</em
-              ><em>n</em><em>t</em> = <em>N</em><em>u</em><em>m</em><em>b</em
-              ><em>e</em><em>r</em><em>O</em><em>f</em><em>S</em><em>t</em
-              ><em>u</em><em>d</em><em>e</em><em>n</em><em>t</em
-              ><em>s</em> × 0 = 0</span
-            >
-          </p>
-          <figure>
-            <img src="images/cost_4.png" alt="Cost per class" loading="lazy" />
-            <figcaption aria-hidden="true">Cost per class</figcaption>
-          </figure>
-        </section>
-      </section>
-    </section>
-    <section id="main-components" class="level2">
-      <h2>Main Components</h2>
-      <p>
-        We will be using the last approach (Attendance system using barcode on
-        student’s ID), the following diagram illustrates the workflow of the IoT
-        system:
-      </p>
-      <figure>
-        <img
-          src="images/architecture.svg"
-          alt="Project architecture"
-          loading="lazy"
-        />
-        <figcaption aria-hidden="true">Project architecture</figcaption>
-      </figure>
-      <ol type="1">
-        <li>
-          Set up a webhook on Google’s
-          <a href="https://developers.google.com/apps-script">Apps Script</a>,
-        </li>
-        <li>
-          The ESP will call the App Script webhook whenever a student card is
-          scanned,
-          <ol type="1">
-            <li>The student’s barcode is scanned using the camera module.</li>
-          </ol>
-        </li>
-        <li>The App Script will update the Google Sheet.</li>
-        <li>
-          The student’s attendance is recorded into a sheet which serves the
-          purpose of a simple database.
-        </li>
-        <li>
-          Build a few custom widgets for Google Sheets that can be used for
-          analytics, e.g., a heatmap of students attendance.
-        </li>
-        <li>
-          (optional) Set up a notification system that alerts the student’s
-          parents whenever a student is absent for more than 3 successive days.
-        </li>
-        <li>
-          (optional) Make a dashboard that connects the ESP to a specific sheet,
-          i.e., a different sheet for each class.
-        </li>
-      </ol>
-    </section>
-    <section id="references" class="level2">
-      <h2>References</h2>
-      <p>
-        [1]
-        <em
-          >IoT Based Biometric Attendance System, International Journal of
-          Electrical Engineering &amp; Technology, 11(2), 2020, pp. 156-161.</em
-        >
-      </p>
-    </section>
+      </article>
+    </main>
   </body>
 </html>
